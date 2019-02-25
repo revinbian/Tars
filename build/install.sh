@@ -10,6 +10,8 @@ MysqlLibPath=
 ##安装glibc-devel
 
 yum install -y glibc-devel
+yum install -y gcc gcc-c++ make automake
+yum install -y perl-Module-Install.noarch
 
 ##安装flex、bison
 
@@ -57,7 +59,7 @@ chown -R mysql:mysql /data/mysql-data /usr/local/mysql/data
 cp support-files/mysql.server /etc/init.d/mysql
 
 yum install -y perl-Module-Install.noarch
-perl scripts/mysql_install_db --user=mysql
+perl scripts/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
 cd -
 
 sed -i "s/192.168.2.131/${MachineIp}/g" `grep 192.168.2.131 -rl ./conf/*`
