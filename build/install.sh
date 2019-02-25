@@ -66,6 +66,8 @@ sed -i "s/192.168.2.131/${MachineIp}/g" `grep 192.168.2.131 -rl ./conf/*`
 cp ./conf/my.cnf /usr/local/mysql/
 
 ##启动mysql
+rm -f /etc/my.cnf
+chown mysql:mysql /usr/local/mysql/ -R
 service mysql start
 chkconfig mysql on
 
