@@ -20,7 +20,7 @@ yum install -y flex bison
 ##安装cmake
 
 tar zxvf v2.8.8.tar.gz
-cd Cmake-2.8.8
+cd CMake-2.8.8
 ./bootstrap
 make
 make install
