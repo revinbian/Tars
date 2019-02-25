@@ -155,7 +155,7 @@ cd ../
 git submodule update --init --recursive web
 cd web/
 npm install -g pm2 --registry=https://registry.npm.taobao.org
-sed -i "s/registry.tars.com/${MachineIp}/g" `grep registry1.tars.com -rl ./config/*`
+sed -i "s/registry.tars.com/${MachineIp}/g" `grep registry.tars.com -rl ./config/*`
 sed -i "s/db.tars.com/${MachineIp}/g" `grep db.tars.com -rl ./config/*`
 npm install --registry=https://registry.npm.taobao.org
 npm run prd
